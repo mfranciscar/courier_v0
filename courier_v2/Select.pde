@@ -24,21 +24,23 @@ class Select {
   void display(){
     pushStyle();
     noStroke();
+    rectMode(CORNER);
     rect(x, y, w, h, 5);
     
     fill(getThirdColor());
-    rect(x + 130, y, 30, h, 5);
+    rect(x + w + 10, y, 30, h, 5);
     
     fill(getFirstColor()); noStroke();
     println(mouseX, mouseY);
     triangle(972, 510, 994, 510, 984, 530);
    
-    fill(0); textAlign(LEFT); textFont(getSecondFont()); textSize(18);
-    text(selectedValue, x-70, y+5);
+    fill(0); textAlign(LEFT); textFont(getFontAt(2)); textSize(18);
+    text(selectedValue, x+5, y + h/1.5);
     
     if(!this.collapsed){
       
       fill(255); stroke(0);
+      
       rect(x, y+h, w, (h + lineSpace)*texts.length);
       
       for(int i=0; i<texts.length; i++){
@@ -49,7 +51,7 @@ class Select {
         }
         
         fill(0);
-        text(texts[i], x-85, y + (h + lineSpace)*i);
+        text(texts[i], x+5, y + h + h/1.5 + (h + lineSpace)*i);
       }
     }
     popStyle();
@@ -86,8 +88,7 @@ class Select {
  }
  
  int clickedOption(){
-   int i = (int)map(mouseY, y + h, y + h + (h + lineSpace)*texts.length, 
-                            0, texts.length);
+   int i = (int)map(mouseY, y + h, y + h/2 + (h + lineSpace)*texts.length, 0, texts.length);
    return i;
  }
   

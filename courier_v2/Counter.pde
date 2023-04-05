@@ -48,14 +48,14 @@ class Counter {
    rect(this.x, this.y, this.w + 2*this.h, this.h, 5);   // Rectangle del botó
    
    fill(0); textFont(getFontAt(2)); textSize(25); textAlign(LEFT);
-   text(value, 730, 470);
+   text(value, 640, 505);
    
    // Icona del botó
    fill(getThirdColor()); noStroke();
-   rect(this.x + 90, this.y, this.h, this.h, 10);
+   rect(this.x + 80, this.y, this.h, this.h, 10);
    image(iconaMes, this.x + 90, this.y, this.h, this.h);
    fill(getThirdColor());
-   rect(this.x + 130, this.y, this.h, this.h, 10);
+   rect(this.x + 115, this.y, this.h, this.h, 10);
    image(iconaMenys, this.x + 130, this.y, this.h, this.h);
    
    popStyle();

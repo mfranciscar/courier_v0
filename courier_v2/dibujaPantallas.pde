@@ -1,5 +1,5 @@
 TextField userText, passwordText, cercador;
-TextField addNameList, addNameMovie, addNameDirector;
+TextField addNameList, addNameMovie, addNameDirector, addActores;
 TextArea addDescription;
 
 void dibujaPantallaLogIn(){
@@ -69,30 +69,32 @@ void dibujaPantallaAddMovie(){
     
     rectMode(CENTER);
     fill(getFirstColor());
-    rect(width/2, height/2+50, 800, 400, 20);
+    rect(width/2, height/2+50, 800, 500, 20);
     
     crearMovie.display();
     fill(getFirstColor()); textFont(getFontAt(1)); textSize(18); textAlign(LEFT);
-    text("Crear película",width/2+42, height/2+205);
+    text("Crear película",width/2+42, height/2+225);
     
     fill(getThirdColor()); textFont(getFontAt(1)); textSize(20); textAlign(LEFT);
-    text("TÍTULO", width/2-50, 280);
+    text("TÍTULO", width/2-50, 255);
     addNameMovie.display();
-    text("DIRECTOR:", width/2-50, 360);
-    text("AÑO:", width/2-50, height/2+85);
+    text("DIRECTOR", width/2-50, 330);
+    text("AÑO", width/2-50, height/2+95);
     addNameDirector.display();
-    text("GÉNERO:", width/2-50, height/2+140);
+    text("GÉNERO", width/2-50, height/2+170);
+    text("ACTORES", width/2-50, 405);
+    addActores.display();
     
     anys.display();
     genere.display();
     updateCursor();
     popStyle();
     
-    rectMode(LEFT);
-    rect(330, 280, 570, 580, 10);
+    rectMode(LEFT); fill(getThirdColor());
+    rect(330, 230, 570, 630, 10);
     fill(0); textSize(18); textFont(getFontAt(2));
     text("(foto)", 390, 320);
-    
+    cbl.display();
   }
 }
 
@@ -110,11 +112,12 @@ void dibujaPantallaMovieCard(){
     
     fill(getThirdColor()); textFont(getFontAt(1)); textSize(20); textAlign(LEFT);
     text("TÍTULO", width/2-50, 280);
-    addNameMovie.display();
     text("DIRECTOR:", width/2-50, 360);
     text("AÑO:", width/2-50, height/2+85);
-    addNameDirector.display();
     text("GÉNERO:", width/2-50, height/2+140);
+    
+    addNameMovie.display();
+    addNameDirector.display();
     
     anys.display();
     genere.display();

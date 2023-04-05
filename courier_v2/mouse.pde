@@ -41,7 +41,7 @@ void mousePressed(){
     bgColor = color(255);
     pantalla = PANTALLA.INICIO;
   }
-  
+  cbl.checkMouse();
   if(genere.mouseOverSelect() && genere.enabled){
     if(!genere.collapsed){
       genere.update();    // Fer acció amb valor
@@ -57,6 +57,7 @@ void mousePressed(){
   addNameMovie.isPressed();
   addDescription.isPressed();
   addNameDirector.isPressed();
+  addActores.isPressed();
   
   updateCursor();
   
@@ -97,6 +98,12 @@ void updateCursor(){
     cursor(ARROW);
   }
   
+  if (cbl.checkCursor()) {
+    cursor(HAND);
+  } else {
+    cursor(ARROW);
+  }
+  
 }
 
 void keyPressed() {
@@ -120,6 +127,7 @@ void keyPressed() {
     else if(pantalla == PANTALLA.ADD_MOVIE){
        addNameMovie.keyPressed(key, (int)keyCode);
        addNameDirector.keyPressed(key, (int)keyCode);
+       addActores.keyPressed(key, (int)keyCode);
     }
        comprovaLogin();
        

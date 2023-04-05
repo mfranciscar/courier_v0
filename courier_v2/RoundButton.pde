@@ -1,5 +1,3 @@
-// Classe Botó
-
 class RoundButton {
   
  // Propietats d'un botó:

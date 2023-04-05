@@ -16,6 +16,9 @@ String[] noms = {"seven.png", "death_proof.png", "fight_club.png",
 int n = 0;
 boolean logged = false;
 
+CheckBoxStarList cbl;
+String[] imgs = {"starON.png", "starOFF.png"};
+
 void setGUI(){
   
   pushStyle();
@@ -42,16 +45,20 @@ void setGUI(){
   
   iconaMes = loadImage("mes.png");
   iconaMenys = loadImage("menys.png");
-  addNameMovie = new TextField(width/2-60, 290, 380, 35);
-  anys = new Counter(iconaMes, iconaMenys, width/2+80, height/2+80, counterW, counterH);
-  crearMovie = new SquareButton("Añadir película", width/2+120, height/2+200, 200, 35);
-  addNameDirector = new TextField(width/2-60, height/2-10, 380, 35);
+  addNameMovie = new TextField(width/2-60, 260, 380, 35);
+  anys = new Counter(iconaMes, iconaMenys, width/2, height/2+115, counterW, counterH);
+  crearMovie = new SquareButton("Añadir película", width/2+120, height/2+220, 200, 35);
+  addNameDirector = new TextField(width/2-60, height/2-50, 380, 35);
+  addActores = new TextField(width/2-60, height/2+25, 380, 35);
   
-  genere = new Select(selectValues, width/2+170, height/2+135, selectW, selectH);
+  genere = new Select(selectValues, width/2+50, height/2+145, selectW, selectH);
   
   c = new Carrousel(width/2-565, height/2+30, 1100, 380, 4);
   c.setImages(noms);
   c.setButtons("bPrev.png", "bNext.png");
+  
+  cbl = new CheckBoxStarList(5, imgs, 100, height/2 - 100, 100, 100);
+  cbl.setCheckBoxStars(3);
   
   popStyle();
   

@@ -32,6 +32,8 @@ class Button {
  // Dibuixa el botó
  void display(){
    
+   pushStyle();
+   
    if(!enabled){
      fill(fillColorDisabled);  // Color desabilitat
    }
@@ -47,6 +49,8 @@ class Button {
    // Text (color, alineació i mida)
    fill(getThirdColor()); textAlign(CENTER); textSize(10); textFont(getFirstFont());
    text(textBoto, this.x + this.w/2, this.y + this.h/2 + 40);
+   
+   popStyle();
  }
  
  // Indica si el cursor està sobre el botó

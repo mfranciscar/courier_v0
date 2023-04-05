@@ -1,5 +1,5 @@
 enum PANTALLA {INICIO, LOG_IN, ADD_LISTA, ADD_MOVIE, MOVIE_CARD};
-PANTALLA pantalla = PANTALLA.INICIO;
+     PANTALLA pantalla = PANTALLA.ADD_MOVIE;
 
 void setup(){
   fullScreen();
